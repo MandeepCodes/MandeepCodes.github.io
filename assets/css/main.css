@@ -371,6 +371,11 @@ body {
   background-color: var(--color-bg-secondary);
   box-shadow: var(--box-shadow);
   padding: 3rem;
+  min-width: fit-content; /* Ensures the container expands to fit its content */
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  display: inline-flex; /* Makes the container behave like an inline element */
+  flex-direction: column; /* Keeps the content stacked vertically */
+  align-items: flex-start; /* Aligns items to the left */
 }
 
 .skills__item {
