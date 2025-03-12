@@ -19,6 +19,44 @@ navItem.forEach((item) => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get form data
+    const formData = new FormData(form);
+    const formObject = {};
+    formData.forEach((value, key) => {
+      formObject[key] = value;
+    });
+
+    // Send form data to API
+    fetch('https://formspree.io/f/mjkyvlka', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formObject),
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Show success message
+          alert('Thank you for your message! I will get back to you soon.');
+          form.reset(); // Clear the form
+        } else {
+          // Show error message
+          alert('Oops! Something went wrong. Please try again.');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('Oops! Something went wrong. Please try again.');
+      });
+  });
+});
+
 // Change nav toggle icon
 function changeIcon() {
   if (navMenu.classList.contains("nav__menu--open")) {

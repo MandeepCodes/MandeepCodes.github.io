@@ -740,3 +740,91 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* My code - test*/
+/* Contact Form Styles */
+.contact__form {
+  background-color: var(--color-bg-secondary);
+  padding: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form__group {
+  margin-bottom: 2rem;
+}
+
+.form__label {
+  display: block;
+  font-size: var(--fs-sm);
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.form__input,
+.form__textarea {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  transition: var(--transition);
+}
+
+.form__input:focus,
+.form__textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(37, 171, 117, 0.25);
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 15rem;
+}
+
+/* Submit Button - Using existing btn styles */
+.contact__form .btn--secondary {
+  width: 100%;
+  font-size: var(--fs-md);
+  padding: 1.8rem 4rem;
+  margin-top: 1rem;
+  transition: var(--transition);
+}
+
+/* Form Responsiveness */
+@media screen and (min-width: 768px) {
+  .contact__form {
+    padding: 4rem;
+  }
+  
+  .form__group {
+    margin-bottom: 2.5rem;
+  }
+  
+  .form__label {
+    font-size: var(--fs-md);
+  }
+  
+  .form__input,
+  .form__textarea {
+    padding: 2rem;
+    font-size: var(--fs-md);
+  }
+}
+
+/* Error Message Styles (if needed later) */
+.form__error {
+  color: #ff4444;
+  font-size: var(--fs-sm);
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.form__error--visible {
+  display: block;
+}
